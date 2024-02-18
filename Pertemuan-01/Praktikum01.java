@@ -4,13 +4,13 @@ public class Praktikum01 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Program Menghitung Nilai Akhir");
         System.out.println("==============================");
-        System.out.print("Masukkan Nilai Tugas : ");
+        System.out.print("Nilai Nilai Tugas : ");
         int tugas = sc.nextInt();
-        System.out.print("Masukkan Nilai Kuis : ");
+        System.out.print("Nilai Nilai Kuis : ");
         int kuis = sc.nextInt();
-        System.out.print("Masukkan Nilai UTS : ");
+        System.out.print("Nilai Nilai UTS : ");
         int uts = sc.nextInt();
-        System.out.print("Masukkan Nilai UAS : ");
+        System.out.print("Nilai Nilai UAS : ");
         int uas= sc.nextInt();
         System.out.println("==============================");
         System.out.println("==============================");
@@ -19,25 +19,25 @@ public class Praktikum01 {
             double kuisAkhir = kuis * 0.2;
             double utsAkhir = uts * 0.3;
             double uasAkhir = uas * 0.3;
-            double nilaiAkhir = tugasAkhir + kuisAkhir + utsAkhir + uasAkhir;
-            System.out.println(nilaiAkhir);
+            double nilaiMatkul = tugasAkhir + kuisAkhir + utsAkhir + uasAkhir;
+            System.out.println(nilaiMatkul);
             String huruf;
-            if (nilaiAkhir > 80 && nilaiAkhir <= 100) {
+            if (nilaiMatkul > 80 && nilaiMatkul <= 100) {
                 huruf = "A";
             }
-            else if (nilaiAkhir > 73 && nilaiAkhir <=80) {
+            else if (nilaiMatkul > 73 && nilaiMatkul <=80) {
                 huruf = "B+";
             }
-            else if (nilaiAkhir > 73 && nilaiAkhir <=80) {
+            else if (nilaiMatkul > 73 && nilaiMatkul <=80) {
                 huruf = "B+";
-            }else if (nilaiAkhir > 65 && nilaiAkhir <=73) {
+            }else if (nilaiMatkul > 65 && nilaiMatkul <=73) {
                 huruf = "B";
-            }else if (nilaiAkhir > 60 && nilaiAkhir <=65) {
+            }else if (nilaiMatkul > 60 && nilaiMatkul <=65) {
                 huruf = "C+";
-            }else if (nilaiAkhir > 50 && nilaiAkhir <=60) {
+            }else if (nilaiMatkul > 50 && nilaiMatkul <=60) {
                 huruf = "C";
             }
-            else if (nilaiAkhir > 39 && nilaiAkhir <=50) {
+            else if (nilaiMatkul > 39 && nilaiMatkul <=50) {
                 huruf = "D";
             }
             else {
@@ -59,5 +59,6 @@ public class Praktikum01 {
         }
         System.out.println("==============================");
         sc.close();
+        //DONE
     }
 }
