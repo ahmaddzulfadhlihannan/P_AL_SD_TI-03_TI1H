@@ -1,14 +1,11 @@
 public class DragonMain03 {
     public static void main(String[] args) {
-        Dragon03 dg = new Dragon03();
-        dg.x = 0;
-        dg.y = 2;
-        dg.width = 1;
-        dg.height = 1;
+        Dragon03 dg = new Dragon03(0, 0, 2, 3);
 
         dg.moveRight();
         dg.moveLeft();
         dg.moveUp();
         dg.moveDown();
+        dg.printPosition();
     }
 }

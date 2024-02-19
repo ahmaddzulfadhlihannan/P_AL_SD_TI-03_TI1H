@@ -1,40 +1,49 @@
 public class Dragon03 {
-    int x, y, width, height;
+    int x;
+    int y;
+    int width;
+    int height;
+
+    Dragon03(int startX, int startY, int gameWidth, int gameHeight) {
+        x = startX;
+        y = startY;
+        width = gameWidth;
+        height = gameHeight;
+    }
 
     void moveLeft() {
+        x--;
         if (x < 0) {
             detectCollision();
         }
-        else {
-            x--;
-        }
     }
+
     void moveRight() {
-        if (x > width) {
+        x++;
+        if (x >= width) {
             detectCollision();
         }
-        else {
-            x++;
-        }
     }
+
     void moveUp() {
+        y--;
         if (y < 0) {
             detectCollision();
         }
-        else {
-            y--;
-        }
     }
+
     void moveDown() {
-        if (y > height) {
+        y++;
+        if (y >= height) {
             detectCollision();
         }
-        else {
-            y++;
-        }
     }
+
+    void printPosition() {
+        System.out.println("Posisi Dragon: (" + x + ", " + y + ")");
+    }
+
     void detectCollision() {
         System.out.println("Game Over");
     }
-
 }
