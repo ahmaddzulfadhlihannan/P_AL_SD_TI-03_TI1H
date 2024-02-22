@@ -102,3 +102,14 @@ Jawaban :
 ##### • Method moveUp() digunakan untuk mengubah posisi dragon ke atas (koordinat y akan berkurang 1), sedangkan moveDown() untuk bergerak ke bawah (koordinat y akan bertambah1). Perlu diperhatikan bahwa koordinat y tidak boleh lebih kecil dari 0 atau lebih besar dari nilai height. Jika koordinat y < 0 atau y > height maka panggil method detectCollision()
 ##### • Method detectCollision() akan mencetak pesan “Game Over” apabila dragon menyentuh ujung area permainan.
 Jawaban : 
+• Atrubut dan Parameter
+    <img src = "image-15.png">
+• Method moveLeft dan moveRight  
+    <img src = "image-16.png">  
+• Method moveUp dan moveDown
+    <img src = "image-17.png">  
+• Method printPosition
+    <img src = "image-18.png">
+• Method detectCollision  
+    <img src = "image-19.png">
+Done
