@@ -15,6 +15,31 @@ public class DataMahasiswa03 {
         this.kelamin = kelamin;
         this.ipk = ipk;
     } 
+
+    public static double hitungIpk(DataMahasiswa03[] dataMhs) {
+        double totIpk = 0;
+        for (int l = 0; l < dataMhs.length; l++) {
+            totIpk += dataMhs[l].ipk;
+        }
+        double rata = totIpk / dataMhs.length;
+        return rata;
+    }
+
+    public static void dataIpkTerbesar(DataMahasiswa03[] dataMhs) {
+        double terbesar = 0;
+        int mahasiswaKe = 0;
+        for (int m = 0; m < dataMhs.length; m++) {
+            if (dataMhs[m].ipk > terbesar) {
+                terbesar = dataMhs[m].ipk;
+                mahasiswaKe = m;
+            }
+        }
+        System.out.println("Data Mahasiswa IPK Terbesar");
+        System.out.println("Nama : " + dataMhs[mahasiswaKe].namaMahasiswa);
+        System.out.println("NIM : " + dataMhs[mahasiswaKe].nim);
+        System.out.println("Jenis kelamin : " + dataMhs[mahasiswaKe].kelamin);
+        System.out.println("IPK : " + dataMhs[mahasiswaKe].ipk);
+    }
     
     public static void main(String[] args) {
         System.out.println("Masukkan jumlah mahasiswa : ");
@@ -51,5 +76,7 @@ public class DataMahasiswa03 {
             System.out.println("Jenis Kelamin : " + dataMhs[j].kelamin);
             System.out.println("IPK : " + dataMhs[j].ipk); 
         }
+        System.out.println("Rata-rata IPK : " + hitungIpk(dataMhs));
+        dataIpkTerbesar(dataMhs);
     }
 }
