@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
-public class Kerucut03 {
+public class Kerucut03 extends BangunRuang {
     public static Scanner sc = new Scanner(System.in);
-    public double p = 3.14;
     public double jari;
     public double sisiMiring;
 
@@ -17,22 +16,22 @@ public class Kerucut03 {
     }
 
     public double hitungSelimut() {
-        double selimut = p * jari * sisiMiring;
+        double selimut = Math.PI * jari * sisiMiring;
         return selimut;
     }
 
     public double hitungLuasAlas() {
-        double luasAlas = p * jari * jari;
+        double luasAlas = Math.PI * jari * jari;
         return luasAlas;
     }
 
-    public double hitungLuasPermukaanKerucut() {
+    public double hitungLuasPermukaan() {
         double luasPermukaanKerucut = hitungSelimut() + hitungLuasAlas();
         return luasPermukaanKerucut;
     }
 
-    public double hitungVolumeKerucut() {
-        double volumeKerucut = (p * jari * jari * hitungTinggi()) / 3;
+    public double hitungVolume() {
+        double volumeKerucut = (Math.PI * jari * jari * hitungTinggi()) / 3;
         return volumeKerucut;
     }
 
@@ -56,8 +55,8 @@ public class Kerucut03 {
         }
         for (int j = 0; j < kerucut.length; j++) {
             System.out.println("\nKerucut ke-" + (j + 1));
-            System.out.println("Luas Permukaan: " + kerucut[j].hitungLuasPermukaanKerucut());
-            System.out.println("Volume: " + kerucut[j].hitungVolumeKerucut());
+            System.out.println("Luas Permukaan: " + kerucut[j].hitungLuasPermukaan());
+            System.out.println("Volume: " + kerucut[j].hitungVolume());
         }
     }
 }

@@ -1,8 +1,5 @@
-/**
- * LimasSegiEmpatSamaSisi03
- */
 import java.util.Scanner;
-public class LimasSegiEmpatSamaSisi03 {
+public class LimasSegiEmpatSamaSisi03 extends BangunRuang {
     public static Scanner sc = new Scanner(System.in);
     public double sisi;
     public double tinggi;
@@ -27,18 +24,18 @@ public class LimasSegiEmpatSamaSisi03 {
         return luasSisiTegak;
     }
 
-    public double LuasPermukaanLimas() {
+    public double hitungLuasPermukaan() {
         double luasPermukaanLimas = LuasAlas() + LuasSisiTegak();
         return luasPermukaanLimas;
     }
 
-    public double VolumeLimas() {
+    public double hitungVolume() {
         double volumeLimas = (LuasAlas() * tinggi) / 3;
         return volumeLimas;
     }
 
     public static void main(String[] args) {
-        System.out.println("Masukkan jumlah limas : ");
+        System.out.println("Masukkan jumlah bola : ");
         int k = sc.nextInt();
         LimasSegiEmpatSamaSisi03[] limas = new LimasSegiEmpatSamaSisi03[k];
         for (int i = 0; i < limas.length; i++) {
@@ -53,8 +50,8 @@ public class LimasSegiEmpatSamaSisi03 {
         for (int j = 0; j < limas.length; j++) {
             System.out.println("\nKerucut ke-" + (j + 1));
             System.out.println("Tinggi : " + limas[j].SisiMiring());
-            System.out.println("Luas Permukaan: " + limas[j].LuasPermukaanLimas());
-            System.out.println("Volume: " + limas[j].VolumeLimas());
+            System.out.println("Luas Permukaan: " + limas[j].hitungLuasPermukaan());
+            System.out.println("Volume: " + limas[j].hitungVolume());
         }
     }
 }
