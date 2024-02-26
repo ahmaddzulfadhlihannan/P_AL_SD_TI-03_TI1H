@@ -1,17 +1,11 @@
 public class ContohMain {
     public static void main(String[] args) {
-        Contoh[][] ct = new Contoh[2][3];
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                ct[i][j] = new Contoh();
-                ct[i][j].nomor = j;
-            }
-        }
+        Contoh contoh1 = new Contoh();
+        contoh1.nomor = 1;
 
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.println("Contoh" + i + "][" + j + "].nomor = " + ct[i][j].nomor);
-            }
-        }
+        Contoh contoh2 = new Contoh(3);
+
+        System.out.println(contoh1.nomor);
+        System.out.println(contoh2.nomor);
     }
 }
