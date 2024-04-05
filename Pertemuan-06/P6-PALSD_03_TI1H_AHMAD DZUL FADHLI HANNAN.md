@@ -86,7 +86,7 @@ bubble sort dan selection sort.
 Jawaban :  
 
 ### Data sebelum terurut  
-<img src = image-18.png>
+<img src = image-18.png>  
 
 ### Bubble Sorting
 Harga  
