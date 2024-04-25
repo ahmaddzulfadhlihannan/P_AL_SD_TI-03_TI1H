@@ -1,17 +1,23 @@
 import java.util.Scanner;
 
 public class Utama03 {
+    public static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner1 = new Scanner(System.in);
     public static void main(String[] args) {
-        Gudang03 gudang = new Gudang03(7);
-        Scanner scanner = new Scanner(System.in);
-        Scanner scanner1 = new Scanner(System.in);
+        
+        System.out.println("Masukkan kapasitas gudang: ");
+        int kapasitas = scanner.nextInt();
+        Gudang03 gudang = new Gudang03(kapasitas);
+        
         while (true) {
             System.out.println("\nMenu");
             System.out.println("1. Tambah Barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Lihat barang teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat barang terbawah");
+            System.out.println("6. Cari barang");
+            System.out.println("7. Keluar");
             int pilihan = scanner.nextInt();
 
             switch (pilihan) {
@@ -40,6 +46,16 @@ public class Utama03 {
                     break;
 
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+
+                case 6:
+                    System.out.print("Masukkan kode barang yang ingin dicari: ");
+                    int kodeCari = scanner.nextInt();
+                    gudang.cariBarang(kodeCari);
+                    break;
+
+                case 7:
                     break;
 
                 default:
@@ -51,3 +67,4 @@ public class Utama03 {
         
     }
 }
+
