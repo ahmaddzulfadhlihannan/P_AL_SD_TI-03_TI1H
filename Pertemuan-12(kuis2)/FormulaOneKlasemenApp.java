@@ -1,19 +1,36 @@
 import java.util.Scanner;
-
-import TITO.DLL;
-import TITO.Race;
-
 public class FormulaOneKlasemenApp {
     public static Scanner sc = new Scanner(System.in);
     public static Scanner ss = new Scanner(System.in);
-    public static SingleLinkedList klasemen = new SingleLinkedList();
-    public static MatchRestult matchResult = new MatchRestult(klasemen);
+    
     public static String[] date = {"20 Mar 2022", "27 Mar 2022", "10 Apr 2022", "24 Apr 2022", "08 May 2022", "22 May 2022", "29 May 2022", "12 Jun 2022", "19 Jun 2022", "03 Jul 2022", "10 Jul 2022", "24 Jul 2022", "31 Jul 2022", "28 Aug 2022", "04 Sep 2022", "11 Sep 2022", "02 Oct 2022", "09 Oct 2022", "23 Oct 2022", "30 Oct 2022", "13 Nov 2022", "20 Nov 2022"};
 
     public static void main(String[] args) {
+        SingleLinkedList klasemen = new SingleLinkedList();
+        MatchRestult matchResult = new MatchRestult(klasemen);
         int menu;
 
-        addDrivers();
+
+        klasemen.inserAt(0, "Lewis Hamilton", "Mercedes", 0, 0, 0);
+        klasemen.inserAt(1, "Max Verstappen", "Red Bull Racing", 0, 0, 0);
+        klasemen.inserAt(2, "Valtteri Bottas", "Mercedes", 0, 0, 0);
+        klasemen.inserAt(3, "Charles Leclerc", "Ferrari", 0, 0, 0);
+        klasemen.inserAt(4, "Daniel Ricciardo", "McLaren", 0, 0, 0);
+        klasemen.inserAt(5, "Lando Norris", "McLaren", 0, 0, 0);
+        klasemen.inserAt(6, "Carlos Sainz Jr.", "Ferrari", 0, 0, 0);
+        klasemen.inserAt(7, "Pierre Gasly", "AlphaTauri", 0, 0, 0);
+        klasemen.inserAt(8, "Fernando Alonso", "Alpine", 0, 0, 0);
+        klasemen.inserAt(9, "Esteban Ocon", "Alpine", 0, 0, 0);
+        klasemen.inserAt(10, "Sebastian Vettel", "Aston Martin", 0, 0, 0);
+        klasemen.inserAt(11, "Lance Stroll", "Aston Martin", 0, 0, 0);
+        klasemen.inserAt(12, "Kimi Räikkönen", "Alfa Romeo", 0, 0, 0);
+        klasemen.inserAt(13, "Antonio Giovinazzi", "Alfa Romeo", 0, 0, 0);
+        klasemen.inserAt(14, "Mick Schumacher", "Haas", 0, 0, 0);
+        klasemen.inserAt(15, "Nikita Mazepin", "Haas", 0, 0, 0);
+        klasemen.inserAt(16, "Yuki Tsunoda", "AlphaTauri", 0, 0, 0);
+        klasemen.inserAt(17, "Nicholas Latifi", "Williams", 0, 0, 0);
+        klasemen.inserAt(18, "George Russell", "Williams", 0, 0, 0);
+        klasemen.inserAt(19, "Sergio Perez", "Red Bull Racing", 0, 0, 0);
 
         do {
             mainMenu();
@@ -39,29 +56,6 @@ public class FormulaOneKlasemenApp {
 
         } while(menu != 0);
 
-    }
-
-    public static void addDrivers() {
-        klasemen.inserAt(1, "Lewis Hamilton", "Mercedes", 0, 0, 0);
-        klasemen.inserAt(2, "Max Verstappen", "Red Bull Racing", 0, 0, 0);
-        klasemen.inserAt(3, "Valtteri Bottas", "Mercedes", 0, 0, 0);
-        klasemen.inserAt(4, "Charles Leclerc", "Ferrari", 0, 0, 0);
-        klasemen.inserAt(5, "Daniel Ricciardo", "McLaren", 0, 0, 0);
-        klasemen.inserAt(6, "Lando Norris", "McLaren", 0, 0, 0);
-        klasemen.inserAt(7, "Carlos Sainz Jr.", "Ferrari", 0, 0, 0);
-        klasemen.inserAt(8, "Pierre Gasly", "AlphaTauri", 0, 0, 0);
-        klasemen.inserAt(9, "Fernando Alonso", "Alpine", 0, 0, 0);
-        klasemen.inserAt(10, "Esteban Ocon", "Alpine", 0, 0, 0);
-        klasemen.inserAt(11, "Sebastian Vettel", "Aston Martin", 0, 0, 0);
-        klasemen.inserAt(12, "Lance Stroll", "Aston Martin", 0, 0, 0);
-        klasemen.inserAt(13, "Kimi Räikkönen", "Alfa Romeo", 0, 0, 0);
-        klasemen.inserAt(14, "Antonio Giovinazzi", "Alfa Romeo", 0, 0, 0);
-        klasemen.inserAt(15, "Mick Schumacher", "Haas", 0, 0, 0);
-        klasemen.inserAt(16, "Nikita Mazepin", "Haas", 0, 0, 0);
-        klasemen.inserAt(17, "Yuki Tsunoda", "AlphaTauri", 0, 0, 0);
-        klasemen.inserAt(18, "Nicholas Latifi", "Williams", 0, 0, 0);
-        klasemen.inserAt(19, "George Russell", "Williams", 0, 0, 0);
-        klasemen.inserAt(20, "Sergio Perez", "Red Bull Racing", 0, 0, 0);
     }
 
     public static void mainMenu() {
