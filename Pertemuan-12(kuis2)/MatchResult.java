@@ -1,8 +1,8 @@
-public class MatchRestult {
-    DriversNode head, tail;
-    SingleLinkedList klasemen;
+public class MatchResult {
+    private DriversNode head;
+    private SingleLinkedList klasemen;
 
-    MatchRestult(SingleLinkedList klasemen) {
+    MatchResult(SingleLinkedList klasemen) {
         this.klasemen = klasemen;
         head = null;
     }
@@ -11,10 +11,8 @@ public class MatchRestult {
         return head == null;
     }
 
-    void printMatchResult(String date) {
+    void printMatchResult() {
         DriversNode temp = head;
-        System.out.println("----------------------------");
-        System.out.println("| Tanggal : " + date + " |");
         System.out.println("==================================================================================================================");
         System.out.printf("| %-4s | %-27s | %-23s | %-7s | %-7s | %-6s | %-6s | %-12s |\n", "Pos", "Nama", "Tim", "Posisi", "Poin", "Menang", "Podium", "Asal Negara");
         System.out.println("==================================================================================================================");
@@ -27,61 +25,66 @@ public class MatchRestult {
 
     void addFirst(int pos, String name, String tim, String country, String time, int pts, int win) {
         DriversNode newNode = new DriversNode(pos, name, tim, country, time, pts, win, head);
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = newNode;
-            tail = newNode;
         } else {
             newNode.next = head;
-            head = newNode;
         }
+        head = newNode;
     }
 
-    void addLast(String date, int pos, String name, String tim, String country, String time, int pts, int win) {
+    void addLast(int pos, String name, String tim, String country, String time, int pts, int win) {
         DriversNode newNode = new DriversNode(pos, name, tim, country, time, pts, win, null);
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = newNode;
-            tail = newNode;
         } else {
-            tail.next = newNode;
-            tail = newNode;
+            DriversNode temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
         }
     }
 
     void insertAfter(String key, int pos, String name, String tim, String country, String time, int pts, int win) {
         DriversNode newNode = new DriversNode(pos, name, tim, country, time, pts, win, null);
         DriversNode temp = head;
-        while(temp != null && !temp.name.equals(key)) {
-            if(temp.name.equals(key)) {
-                newNode.next = temp.next;
-                temp.next = newNode;
-                break;
-            }
+        while (temp != null && !temp.name.equals(key)) {
             temp = temp.next;
+        }
+        if (temp != null) {
+            newNode.next = temp.next;
+            temp.next = newNode;
+        } else {
+            System.out.println("Key tidak ditemukan");
         }
     }
 
     void insertAt(int pos, String name, String tim, String country, String time, int pts, int win) {
-        DriversNode newNode = new DriversNode(pos, name, tim, country, time, pts, win, null);
-        if(pos < 0) {
-            System.out.println("Index tidak valid");
-        } else if(pos == 0) {
+        if (pos == 0) {
             addFirst(pos, name, tim, country, time, pts, win);
-        } else {
-            DriversNode temp = head;
-            for(int i = 0; i < pos - 1; i++) {
+            return;
+        }
+        DriversNode temp = head;
+        for (int i = 0; i < pos - 2; i++) {
+            if (temp != null) {
                 temp = temp.next;
             }
-            newNode.next = temp.next;
-            temp.next = newNode;
+        }
+        if (temp != null) {
+            insertAfter(temp.name, pos, name, tim, country, time, pts, win);
+        } else {
+            addLast(pos, name, tim, country, time, pts, win);
         }
     }
 
-    void addMatchResult(int pos, String name, String tim, String country, String time, int pts, int win) {
+    void addMatchResult(int pos, String country, String name, String tim , String time, int pts, int win) {
         insertAt(pos, name, tim, country, time, pts, win);
-        klasemen.updatePts(name, pts, win);
+        klasemen.updatePoints(name, pts, win);
     }
 
-    void clearMatchResult() {
+    void clearRaceResults() {
         head = null;
     }
 }
+
