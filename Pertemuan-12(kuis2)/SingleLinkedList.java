@@ -9,11 +9,11 @@ public class SingleLinkedList {
     public void printKlasemen() {
         DriversNode temp = head;
         System.out.println("====================================================================================================");
-        System.out.printf("| %-4s | %-27s | %-23s | %-7s | %-7s | %-6s | %-6s |\n", "Pos", "Nama Pembalap", "Tim", "Posisi", "Poin", "Menang", "Podium");
+        System.out.printf("| %-4s | %-27s | %-23s | %-7s | %-6s | %-6s |\n", "Pos", "Nama Pembalap", "Tim", "Poin", "Menang", "Podium");
         System.out.println("====================================================================================================");
         int pos = 1;
         while(temp != null) {
-            System.out.printf("| %-4d | %-27s | %-23s | %-7d | %-7d | %-6d | %-6d |\n", pos, temp.name, temp.tim, temp.pos, temp.pts, temp.win, temp.pod);
+            System.out.printf("| %-4d | %-27s | %-23s | %-7d | %-6d | %-6d |\n", pos, temp.name, temp.tim, temp.pts, temp.win, temp.pod);
             pos++;
             temp = temp.next;
         }

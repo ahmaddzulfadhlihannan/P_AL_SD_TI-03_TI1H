@@ -14,10 +14,10 @@ public class MatchResult {
     void printMatchResult() {
         DriversNode temp = head;
         System.out.println("==================================================================================================================");
-        System.out.printf("| %-4s | %-27s | %-23s | %-7s | %-7s | %-6s | %-6s | %-12s |\n", "Pos", "Nama", "Tim", "Posisi", "Poin", "Menang", "Podium", "Asal Negara");
+        System.out.printf("| %-4s | %-27s | %-23s | %-7s | %-6s | %-6s | %-12s |\n", "Pos", "Nama", "Tim", "Poin", "Menang", "Podium", "Asal Negara");
         System.out.println("==================================================================================================================");
         while(temp != null) {
-            System.out.printf("| %-4d | %-27s | %-23s | %-7d | %-7d | %-6d | %-6d | %-12s |\n", temp.pos, temp.name, temp.tim, temp.pos, temp.pts, temp.win, temp.pod, temp.country);
+            System.out.printf("| %-4d | %-27s | %-23s | %-7d | %-6d | %-6d | %-12s |\n", temp.pos, temp.name, temp.tim, temp.pts, temp.win, temp.pod, temp.country);
             System.out.println("------------------------------------------------------------------------------------------------------------------");
             temp = temp.next;
         }
