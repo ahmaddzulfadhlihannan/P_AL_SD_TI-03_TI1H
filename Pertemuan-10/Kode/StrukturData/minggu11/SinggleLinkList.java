@@ -26,7 +26,7 @@ public class SinggleLinkList {
     }
 
     void addFirst(int input) {
-        Node ndInput = new Node(input, null);
+        Node ndInput = new Node(input, head);
         if(isEmpty()){
             head = ndInput;// head dan tail harus dimiliki node yang sama
             tail = ndInput; 
@@ -45,7 +45,6 @@ public class SinggleLinkList {
             tail.next = ndInput; //Geser tail sebelumnya dan node input baru menjadi tail
             tail = ndInput;
         }
-
     }
 
     void insertAfter(int key, int input) {
